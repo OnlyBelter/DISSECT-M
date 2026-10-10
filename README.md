@@ -4,6 +4,14 @@ DISSECT is a deep semi-supervised learning framework that performs complete deco
 
 This repository contains the functions to run DISSECT interactively in Python. The code to reproduce figures and run deconvolution pipeline through comamnd line is available [here](https://github.com/imsb-uke/deconvolution).  
 
+## macOS compatibility
+
+This local checkout includes a macOS-compatible dependency set in
+`requirements.txt`. It uses `tensorflow==2.20.0` instead of the unavailable
+macOS package `tensorflow-gpu==2.7.0`, and `tf-keras==2.20.1` to retain the
+legacy `tf.keras` API used by DISSECT. This configuration uses TensorFlow on
+CPU; it does not enable CUDA GPU acceleration.
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. Folder tutorials include notebooks to get started.
@@ -39,8 +47,12 @@ cd DISSECT/tutorials
 jupyter notebook
 
 ```
-## GPU usage
-By default, tensorflow-gpu which is installed while installed DISSECT works as long as appropriate CUDA driver is installed. DISSECT uses tensorflow-gpu version 2.7.0 with CUDA 11.2 and cuDNN 8.1. The available devices to tensorflow can be checked as below.
+## GPU usage on Linux
+
+The upstream DISSECT setup supports CUDA on Linux with a compatible NVIDIA
+driver and CUDA/cuDNN installation. The macOS-compatible requirements above
+use CPU TensorFlow instead. On a CUDA-enabled Linux system, check the devices
+available to TensorFlow with:
 
 ```python
 import tensorflow as tf
