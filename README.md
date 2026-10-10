@@ -4,6 +4,9 @@ DISSECT is a deep semi-supervised learning framework that performs complete deco
 
 This repository contains the functions to run DISSECT interactively in Python. The code to reproduce figures and run deconvolution pipeline through comamnd line is available [here](https://github.com/imsb-uke/deconvolution).  
 
+This macOS-compatible checkout is based on the
+[original DISSECT repository](https://github.com/imsb-uke/DISSECT).
+
 ## macOS compatibility
 
 This local checkout includes a macOS-compatible dependency set in
